@@ -1,4 +1,5 @@
 export interface IGoogleUserInfo {
+  _id?: string;
   sub: string;
   name: string;
   given_name: string;

@@ -1,5 +1,5 @@
 import { useGoogleLogin } from '@react-oauth/google';
-import { GoogleIcon } from '@/icons';
+import GoogleIcon from '@/icons/GoogleIcon';
 import shareVideo from '@/assets/share.mp4';
 import logo from '@/assets/logowhite.png';
 import { useState } from 'react';
@@ -28,12 +28,14 @@ const Login = () => {
         .then((res) => res.json())
         .catch((err) => console.log(err));
 
+      const userId = crypto.randomUUID();
+      userInfo._id = userId;
       localStorage.setItem('user', JSON.stringify(userInfo));
 
       const { name, picture } = userInfo;
 
       const doc = {
-        _id: crypto.randomUUID(),
+        _id: userId,
         _type: 'user',
         userName: name,
         image: picture,
