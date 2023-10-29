@@ -1,4 +1,4 @@
-export interface IUser {
+export interface IUserModel {
   image: string;
   _createdAt: Date;
   _rev: string;

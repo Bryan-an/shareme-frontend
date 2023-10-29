@@ -1,11 +1,11 @@
 import { NavLink, Link } from 'react-router-dom';
 import Home3FillIcon from '@/icons/Home3FillIcon';
 import logo from '@/assets/logo.png';
-import { IUser } from '@/types/user';
+import { IUserModel } from '@/types/user';
 import React from 'react';
 
 interface IProps {
-  user?: IUser;
+  user?: IUserModel;
   setToggleSidebar?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

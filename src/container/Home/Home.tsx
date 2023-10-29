@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { client } from '@/client';
 import { IGoogleUserInfo } from '@/types/google';
-import { IUser } from '@/types/user';
+import { IUserModel } from '@/types/user';
 import { userQuery } from '@/utils/data';
 import logo from '@/assets/logo.png';
 import Sidebar from '@/components/Sidebar';
@@ -13,7 +13,7 @@ import CloseCircleFillIcon from '@/icons/CloseCircleFillIcon';
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
-  const [user, setUser] = useState<IUser>();
+  const [user, setUser] = useState<IUserModel>();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
