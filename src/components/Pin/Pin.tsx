@@ -29,7 +29,7 @@ const Pin: React.FC<IProps> = ({ pin, className }) => {
   // props
   const { postedBy, image, _id, destination, save } = pin;
 
-  // hooks
+  // variables
   const navigate = useNavigate();
 
   // state
