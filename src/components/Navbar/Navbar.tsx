@@ -34,6 +34,7 @@ const Navbar: React.FC<IProps> = ({ searchTerm, setSearchTerm, user }) => {
             src={user.image}
             alt="user profile image"
             className="w-14 h-12 rounded-lg"
+            referrerPolicy="no-referrer"
           />
         </Link>
         <Link

@@ -140,9 +140,14 @@ const Pin: React.FC<IProps> = ({ pin, className }) => {
                   className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                 >
                   <ArrowRightUpLineIcon />
-                  {destination.length > 20
-                    ? destination.slice(7, 20)
-                    : destination.slice(7)}
+                  {destination &&
+                    ((): string => {
+                      const domain = destination.replace(/^\w+:\/\//, '');
+
+                      return domain.length > 15
+                        ? `${domain.slice(0, 15)}...`
+                        : domain;
+                    })()}
                 </a>
               )}
               {postedBy?._id === userInfo?._id && (
@@ -169,6 +174,7 @@ const Pin: React.FC<IProps> = ({ pin, className }) => {
           src={postedBy?.image}
           alt="user profile"
           className="w-8 h-8 rounded-full object-cover"
+          referrerPolicy="no-referrer"
         />
         <p className="font-semibold capitalize">{postedBy?.userName}</p>
       </Link>

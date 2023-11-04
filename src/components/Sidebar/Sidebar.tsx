@@ -77,6 +77,7 @@ const Sidebar: React.FC<IProps> = ({ user, setToggleSidebar }) => {
             src={user.image}
             alt={user.userName}
             className="w-10 h-10 rounded-full"
+            referrerPolicy="no-referrer"
           />
           <p>{user.userName}</p>
         </Link>
