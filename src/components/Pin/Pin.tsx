@@ -44,7 +44,7 @@ const Pin: React.FC<IProps> = ({ pin, className }) => {
 
   useEffect(() => {
     setAlreadySaved(
-      !!save?.find((item) => item.postedBy._id === userInfo?._id)
+      !!save?.find((item) => item?.postedBy?._id === userInfo?._id)
     );
   }, [save, userInfo]);
 
