@@ -1,8 +1,21 @@
-import { NavLink, Link } from 'react-router-dom';
-import Home3FillIcon from '@/icons/Home3FillIcon';
-import logo from '@/assets/logo.png';
-import { IUserModel } from '@/types/user';
+// react
 import React from 'react';
+
+// third-party
+import { NavLink, Link } from 'react-router-dom';
+
+// icons
+import Home3FillIcon from '@/icons/Home3FillIcon';
+
+// assets
+import logo from '@/assets/logo.png';
+
+// types
+import { IUserModel } from '@/types/user';
+
+// utils
+import { categories } from '@/utils/data';
+// -----------------------------------------------------------------------------
 
 interface IProps {
   user?: IUserModel;
@@ -14,15 +27,6 @@ const isNotActiveStyle =
 
 const isActiveStyle =
   'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize';
-
-const categories = [
-  { name: 'Animals' },
-  { name: 'Wallpapers' },
-  { name: 'Photography' },
-  { name: 'Gaming' },
-  { name: 'Coding' },
-  { name: 'Other' },
-];
 
 const Sidebar: React.FC<IProps> = ({ user, setToggleSidebar }) => {
   const handleCloseSidebar = () => {
@@ -62,6 +66,11 @@ const Sidebar: React.FC<IProps> = ({ user, setToggleSidebar }) => {
               onClick={handleCloseSidebar}
               key={category.name}
             >
+              <img
+                src={category.image}
+                alt={`${category.name} category`}
+                className="w-8 h-8 rounded-full shadow-sm"
+              />
               {category.name}
             </NavLink>
           ))}
