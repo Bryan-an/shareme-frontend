@@ -28,14 +28,13 @@ const Login = () => {
         .then((res) => res.json())
         .catch((err) => console.log(err));
 
-      const userId = crypto.randomUUID();
-      userInfo._id = userId;
+      userInfo._id = userInfo.sub;
       localStorage.setItem('user', JSON.stringify(userInfo));
 
-      const { name, picture } = userInfo;
+      const { name, picture, sub } = userInfo;
 
       const doc = {
-        _id: userId,
+        _id: sub,
         _type: 'user',
         userName: name,
         image: picture,
